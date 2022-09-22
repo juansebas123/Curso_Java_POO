@@ -4,7 +4,7 @@ import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 public class UIMenu {
-
+    //MONTHS es una cosntante (final)(mayuscula) porque siempre van a ser los mismos
     public static String[] MONTHS = {"Enero", "Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
 
     public static void showMenu(){
@@ -52,7 +52,7 @@ public class UIMenu {
             switch (response){
                 case 1:
                     System.out.println("::Book an appointment");
-                    for (int i = 0; i <4; i++) {
+                    for (int i = 1; i <4; i++) {
                         System.out.println(i + "." + MONTHS[i]);
                     }
                     break;

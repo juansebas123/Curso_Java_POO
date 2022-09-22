@@ -6,10 +6,14 @@ public class Doctor {
     String speciality;
     Doctor(){
         System.out.println("construyendo el objeto doctor");
-        id++;
+
     }
-    Doctor(String name){
+    Doctor(String name, String speciality){
+        id++;
         System.out.println("El nombre del Doctor asignado es: " + name);
+        //this se refiere a todos los elementos de esa clase
+        this.name = name;
+        this.speciality = speciality;
     }
     //comportamientos
     //metodo
