@@ -4,7 +4,6 @@ import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 public class UIMenu {
-
     public static String[] MONTHS = {"Enero", "Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
 
     public static void showMenu(){
