@@ -51,7 +51,7 @@ public class UIMenu {
             switch (response){
                 case 1:
                     System.out.println("::Book an appointment");
-                    for (int i = 0; i <4; i++) {
+                    for (int i = 1; i <4; i++) {
                         System.out.println(i + "." + MONTHS[i]);
                     }
                     break;
