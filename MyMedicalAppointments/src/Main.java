@@ -1,13 +1,23 @@
 import javax.print.Doc;
 
+import java.util.Date;
+
 import static ui.UIMenu.*;
 
 public class Main {
     public static void main(String[] args) {
         //objeto
         Doctor myDoctor = new Doctor("Juan Ricaurte", "pediatria");
-        System.out.println(myDoctor.name);
-        System.out.println(myDoctor.speciality);
+        myDoctor.addAvailableAppointment(new Date(), "4 pm");
+        myDoctor.addAvailableAppointment(new Date(), "10 pm");
+        myDoctor.addAvailableAppointment(new Date(), "1 pm");
+
+        for (Doctor.AvailableAppointment availableAppointment: myDoctor.availableAppointments) {
+            System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
+        }
+
+        //System.out.println(myDoctor.name);
+        //System.out.println(myDoctor.speciality);
         /*
         Doctor myDoctor = new Doctor();
         myDoctor.name = "Sebastian Ricaurte";
@@ -20,11 +30,11 @@ public class Main {
         */
         //showMenu();
         //variable vs objeto: un vistazo a la memoria
-        int i = 0;
-        int b = 2;
-        b = i;
+        //int i = 0;
+        //int b = 2;
+        //b = i;
         //b=0
-        String name = "ann";
+        //String name = "ann";
 
         Patient patient = new Patient("Alejandra", "alejandra@mail.com");
         Patient patient2 = new Patient("Anni", "Annia@mail.com");

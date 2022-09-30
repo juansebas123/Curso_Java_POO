@@ -9,10 +9,10 @@ public class Doctor {
     private String email;
     private String speciality;
     //available appointment
-    private int id avaiableAppointment;
+    /*private int id availableAppointment;
     private Date date;
     private String time;
-    //
+    */
 
     Doctor(){
         System.out.println("construyendo el objeto doctor");
@@ -35,13 +35,16 @@ public class Doctor {
     }
 
     //colecciones
+    // añade citas
     ArrayList<AvailableAppointment>availableAppointments = new ArrayList<>();
     public void addAvailableAppointment(Date date, String time){
-        availableAppointments.add(new AvailableAppointment(date,time));
-
+        availableAppointments.add(new Doctor.AvailableAppointment(date,time));
+    }
+    public ArrayList<AvailableAppointment> getAvailableAppointments() {
+        return availableAppointments;
     }
 
-    public static  class  AvailableAppointment{
+    public static class AvailableAppointment{
         private int id;
         private Date date;
         private String time;
