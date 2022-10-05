@@ -1,22 +1,28 @@
-public class Patient {
+//herencia en User
+public class Patient extends User {
     static int id;
     // dicen que es mala practica porque es necesario que cada variable que tenga su modificador y esto puede variar
     //String name, email, addres,phoneNumber, birthday, blood;
     //double weight, height;
     //encapsular para que no los edite nadie, fuera de esta clase nadie lo puede modificar
-    private String name;
+    /*private String name;
     private String email;
     private String address;
-    private String phoneNumber;
+    private String phoneNumber;*/
+
     private String birthday;
     private double weight;
     private double height;
-    String blood;
+    private String blood;
+
     //metodo constructor
     Patient(String name, String email) {
-        this.name = name;
+        //super: indica que una variable o un metodo es de clase padre (superclase)
+        super(name, email);
+        //mas instrucciones
+        /*this.name = name;
         this.email = email;
-        this.weight = 54.5;
+        this.weight = 54.5;*/
         //System.out.println("Nombre: " + name + "Email: " + email);
         //id++;
     }
@@ -35,7 +41,7 @@ public class Patient {
     public void setHeight(double height) {
         this.height = height;
     }
-
+/*
     public static int getId() {
         return id;
     }
@@ -79,7 +85,7 @@ public class Patient {
             this.phoneNumber = phoneNumber;
         }
     }
-
+*/
     public String getBirthday() {
         return birthday;
     }
@@ -92,13 +98,16 @@ public class Patient {
         return weight;
     }
 
-
-
     public String getBlood() {
         return blood;
     }
 
     public void setBlood(String blood) {
         this.blood = blood;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nAge: " + birthday + "\n Weigth: " + getWeigth() + "\n HEigth" + getHeight() + "\n Blood" + blood;
     }
 }

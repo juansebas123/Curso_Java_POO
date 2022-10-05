@@ -1,38 +1,49 @@
 import java.util.ArrayList;
 import java.util.Date;
-
-public class Doctor {
+//aplicamos henrencia extends
+public class Doctor extends User {
     //atributos
     //int id; // autoincrementado
-    static int id = 0;
+    /*static int id = 0;
     private String name;
-    private String email;
+    private String address;
+    private String phoneNumber;
+    private String email;*/
     private String speciality;
     //available appointment
     /*private int id availableAppointment;
     private Date date;
     private String time;
     */
-
+    /*
     Doctor(){
         System.out.println("construyendo el objeto doctor");
-
-    }
-    Doctor(String name, String speciality){
-        id++;
+    }*/
+    Doctor(String name, String email){
+        super(name, email);
+        //id++;
         System.out.println("El nombre del Doctor asignado es: " + name);
         //this se refiere a todos los elementos de esa clase
-        this.name = name;
+        //this.name = name;
         this.speciality = speciality;
     }
+
+    public String getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
+    }
+
     //comportamientos
     //metodo
-    public void showName(){
+    /*public void showName(){
         System.out.println(name);
     }
     public void showId(){
         System.out.println("ID Doctor: " + id);
-    }
+    }*/
 
     //colecciones
     // añade citas
@@ -42,6 +53,12 @@ public class Doctor {
     }
     public ArrayList<AvailableAppointment> getAvailableAppointments() {
         return availableAppointments;
+    }
+
+    @Override
+    public String toString() {
+        //super.toString se peude reutilizar suepr clase padre definida en user
+        return super.toString() + "\nSpeciality: " + speciality + "\nAvailable " + availableAppointments.toString();
     }
 
     public static class AvailableAppointment{
@@ -68,6 +85,11 @@ public class Doctor {
 
         public void setTime(String time) {
             this.time = time;
+        }
+
+        @Override
+        public String toString() {
+            return "Available Appointments \nDate: " + date + "\nTime: " + time;
         }
     }
 
