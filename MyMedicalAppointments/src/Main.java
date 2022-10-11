@@ -55,8 +55,6 @@ public class Main {
         System.out.println(patient.getName()); //
         System.out.println(patient2.getName());*/
 
-
-
         /*patient.setWeight(54.6);
         System.out.println(patient.getWeight());
 
