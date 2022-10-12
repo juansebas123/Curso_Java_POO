@@ -1,4 +1,6 @@
-//herencia en User
+package model;
+
+//herencia en model.User
 public class Patient extends User {
     static int id;
     // dicen que es mala practica porque es necesario que cada variable que tenga su modificador y esto puede variar
@@ -16,7 +18,7 @@ public class Patient extends User {
     private String blood;
 
     //metodo constructor
-    Patient(String name, String email) {
+    public Patient(String name, String email) {
         //super: indica que una variable o un metodo es de clase padre (superclase)
         super(name, email);
         //mas instrucciones
@@ -46,7 +48,7 @@ public class Patient extends User {
         return id;
     }
     public static void setId(int id) {
-        Patient.id = id;
+        model.Patient.id = id;
     }
 
     public String getName() {
@@ -109,5 +111,11 @@ public class Patient extends User {
     @Override
     public String toString() {
         return super.toString() + "\nAge: " + birthday + "\n Weigth: " + getWeigth() + "\n HEigth" + getHeight() + "\n Blood" + blood;
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Paciente");
+        System.out.println("historial completo desde nacimiento");
     }
 }

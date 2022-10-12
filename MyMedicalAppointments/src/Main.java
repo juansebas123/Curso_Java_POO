@@ -1,8 +1,7 @@
-import javax.print.Doc;
+import model.*;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.Date;
-
-import static ui.UIMenu.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,20 +12,49 @@ public class Main {
         myDoctor.addAvailableAppointment(new Date(), "1 pm");
 
         System.out.println(myDoctor);
+
+        //polimorfismo
+        User user = new Doctor("juan", "sebas@gmail.com");
+        user.showDataUser();
+
+        User userPa = new Patient("juan", "sebas@gmail.com");
+        userPa.showDataUser();
+
+        User user1 = new User("caro", "caro@gmail.com") {
+            @Override
+            public void showDataUser() {
+                System.out.println("doctor\n");
+                System.out.println("hospital:crus verde");
+                System.out.println("departamento: geriatría");
+            }
+        };
+
+        //llamalo
+
+        user1.showDataUser();
+
+        ISchedulable iSchedulable = new ISchedulable() {
+            @Override
+            public void schdule(Date date, String time) {
+                
+            }
+        };
+
+
         /*
-        for (Doctor.AvailableAppointment availableAppointment: myDoctor.availableAppointments) {
+        for (model.Doctor.AvailableAppointment availableAppointment: myDoctor.availableAppointments) {
             System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
         }*/
 
         //System.out.println(myDoctor.name);
         //System.out.println(myDoctor.speciality);
         /*
-        Doctor myDoctor = new Doctor();
+        model.Doctor myDoctor = new model.Doctor();
         myDoctor.name = "Sebastian Ricaurte";
         myDoctor.showName();
         myDoctor.showId();
 
-        Doctor MyDoctorAnn = new Doctor();
+        model.Doctor MyDoctorAnn = new model.Doctor();
         myDoctor.showId();
         //metodo
         */
@@ -37,10 +65,12 @@ public class Main {
         b = i;
         b=0
         String name = "ann";*/
+        /*
         System.out.println();
         Patient patient = new Patient("Alejandra", "alejandra@mail.com");
         System.out.println(patient);
-        /*Patient patient2 = new Patient("Anni", "Annia@mail.com");
+        */
+        /*model.Patient patient2 = new model.Patient("Anni", "Annia@mail.com");
         System.out.println();
         System.out.println(patient); // imprime la localidades de memoria
         System.out.println(patient2);

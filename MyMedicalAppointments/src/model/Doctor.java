@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 //aplicamos henrencia extends
@@ -16,13 +18,13 @@ public class Doctor extends User {
     private String time;
     */
     /*
-    Doctor(){
+    model.Doctor(){
         System.out.println("construyendo el objeto doctor");
     }*/
-    Doctor(String name, String email){
+    public Doctor(String name, String email){
         super(name, email);
         //id++;
-        System.out.println("El nombre del Doctor asignado es: " + name);
+        System.out.println("El nombre del model.Doctor asignado es: " + name);
         //this se refiere a todos los elementos de esa clase
         //this.name = name;
         this.speciality = speciality;
@@ -42,7 +44,7 @@ public class Doctor extends User {
         System.out.println(name);
     }
     public void showId(){
-        System.out.println("ID Doctor: " + id);
+        System.out.println("ID model.Doctor: " + id);
     }*/
 
     //colecciones
@@ -59,6 +61,12 @@ public class Doctor extends User {
     public String toString() {
         //super.toString se peude reutilizar suepr clase padre definida en user
         return super.toString() + "\nSpeciality: " + speciality + "\nAvailable " + availableAppointments.toString();
+    }
+
+    @Override
+    public void showDataUser() {
+        System.out.println(" empleado del hospital: crus roja");
+        System.out.println("departamento: Cancerologia");
     }
 
     public static class AvailableAppointment{

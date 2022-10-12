@@ -1,4 +1,6 @@
-public class User{
+package model;
+
+public abstract class User{
     private int id;
     private String name;
     private String email;
@@ -58,7 +60,12 @@ public class User{
     // que este metodo quiere decir no es de la clase user, meotod estradico de la superclase padre
     @Override // sobrescritura de metodo
     public String toString() {
-        return " User: " + name + ", Email: " + email +
+        return " model.User: " + name + ", Email: " + email +
                 "\nAddrees: " + address + ". Phone " + phoneNumber;
     }
+
+    //metodo abstracto
+
+    public  abstract void showDataUser();
+
 }
