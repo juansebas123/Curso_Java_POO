@@ -36,7 +36,7 @@ public class Main {
         ISchedulable iSchedulable = new ISchedulable() {
             @Override
             public void schdule(Date date, String time) {
-                
+
             }
         };
 
