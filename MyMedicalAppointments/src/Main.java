@@ -3,10 +3,12 @@ import model.*;
 import javax.jws.soap.SOAPBinding;
 import java.util.Date;
 
+import static ui.UIMenu.showMenu;
+
 public class Main {
     public static void main(String[] args) {
         //objeto
-        Doctor myDoctor = new Doctor("Juan Ricaurte", "jua@gmail.com");
+        /*Doctor myDoctor = new Doctor("Juan Ricaurte", "jua@gmail.com");
         myDoctor.addAvailableAppointment(new Date(), "4 pm");
         myDoctor.addAvailableAppointment(new Date(), "10 pm");
         myDoctor.addAvailableAppointment(new Date(), "1 pm");
@@ -38,14 +40,11 @@ public class Main {
             public void schdule(Date date, String time) {
 
             }
-        };
-
-
+        };*/
         /*
         for (model.Doctor.AvailableAppointment availableAppointment: myDoctor.availableAppointments) {
             System.out.println(availableAppointment.getDate() + " " + availableAppointment.getTime());
         }*/
-
         //System.out.println(myDoctor.name);
         //System.out.println(myDoctor.speciality);
         /*
@@ -84,13 +83,13 @@ public class Main {
         patient2.setName("manuel");
         System.out.println(patient.getName()); //
         System.out.println(patient2.getName());*/
-
         /*patient.setWeight(54.6);
         System.out.println(patient.getWeight());
 
         patient.setPhoneNumber("123456789");
         System.out.println(patient.getPhoneNumber());*/
 
+        showMenu();
     }
 
 }
